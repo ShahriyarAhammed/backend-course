@@ -11,7 +11,9 @@ app = FastAPI()
 
 app.include_router(users.router)
 
-app.mount("/uploads", StaticFiles(directory="uploads"), name="Uploads")
+import os # This brings in Python’s built-in Operating System (OS) module. This module contains tools that allow Python to talk directly to your computer's file system so it can create, delete, or move folders and files.
+os.makedirs("uploads", exist_ok=True)
+app.mount("/uploads", StaticFiles(directory="uploads"), name="Uploads") # this line of code means you are making a folder on your computer accessible to the public via a web URL.
 
 @app.exception_handler(IntegrityError)
 def handle_integrity_error(request: Request, exc: IntegrityError):
