@@ -8,7 +8,8 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-engine = create_engine(DATABASE_URL)
+#engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, pool_recycle=300) #neon auto disconnects after 5 minute thats why we have to do it
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
