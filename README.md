@@ -60,3 +60,9 @@ Python, FastAPI, PostgreSQL, SQLAlchemy, Alembic, Pydantic, python-jose, passlib
 ## Author
 
 Shahriyar Ahammed
+
+## Live Demo
+
+API docs: https://backend-course-3txb.onrender.com/docs
+
+Note: this runs on a free plan, so the first request after a period of inactivity can take about a minute while the server wakes up.
